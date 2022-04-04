@@ -1,0 +1,6 @@
+<odoo>
+    <menuitem id="menu_eta_tax_type_code" name="Tax Type Codes" parent="account.account_account_menu"
+              action="action_eta_tax_type_code" sequence="11"/>
+    <menuitem id="menu_eta_taxpayer_activity_code" name="Taxpayer Activity Codes" parent="account.account_account_menu"
+              action="action_eta_taxpayer_activity_code" sequence="12"/>
+</odoo>

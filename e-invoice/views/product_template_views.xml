@@ -1,0 +1,20 @@
+<odoo>
+    <record id="view_e-invoice_product_template_form" model="ir.ui.view">
+        <field name="name">view.e.invoice.egypt.product.template.form</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='invoicing']" position="after">
+                <page string="E-Invoice" name="e_invoice_info">
+                    <group>
+                        <group>
+                            <field name="eta_code_type" required="1"/>
+                            <field name="eta_code" required="1"/>
+                        </group>
+                        <group/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

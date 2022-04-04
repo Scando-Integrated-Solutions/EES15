@@ -1,0 +1,28 @@
+<odoo>
+    <record id="view_e-invoice_company_form" model="ir.ui.view">
+        <field name="name">view.e.invoice.egypt.company.form</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='vat']" position="attributes">
+                <attribute name="required">1</attribute>
+            </xpath>
+            <xpath expr="//page[@name='general_info']" position="after">
+                <page string="E-Invoice" name="e_invoice_info">
+                    <group>
+                        <group>
+                            <field name="e_invoice_environment" widget="radio" options="{'horizontal': true}"/>
+                            <field name="e_invoice_version" widget="radio" options="{'horizontal': true}"/>
+                            <field name="e_invoice_api_url"/>
+                            <field name="e_invoice_api_id"/>
+                            <field name="e_invoice_api_secret" password="True"/>
+                            <field name="limit_person_invoice"/>
+                            <button name="test_e_invoice_connection" type="object" string="Test Connection"
+                                    icon="fa-television"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>
