@@ -1,0 +1,61 @@
+<odoo>
+    <record id="view_e-invoice_account_move_tree" model="ir.ui.view">
+        <field name="name">view.e.invoice.egypt.account.move.tree</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_invoice_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='state']" position="after">
+                <field name="e_invoice_state" widget="badge" decoration-success="e_invoice_state == 'valid'"
+                       decoration-danger="e_invoice_state not in ['draft','valid']"
+                       decoration-info="e_invoice_state == 'draft'" optional="show"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_e-invoice_account_move_form" model="ir.ui.view">
+        <field name="name">view.e.invoice.egypt.account.move.form</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='state']" position="after">
+                <field name="e_invoice_state" widget="statusbar" statusbar_visible="draft,submitted"
+                       attrs="{'invisible': [('move_type', 'in', ['entry','out_receipt','in_receipt'])]}"/>
+            </xpath>
+            <xpath expr="//field[@name='state']" position="before">
+                <button name="action_sign_e_invoice" string="ETA Sign" class="oe_highlight" type="object"
+                        attrs="{'invisible': ['|','|','|',('e_invoice_version','=','0.9'),('state', '!=', 'posted'),('e_invoice_state', 'not in', ['draft','invalid']), ('move_type', 'in', ['entry','out_receipt','in_receipt'])]}"/>
+                <button name="action_send_e_invoice" string="ETA Send" class="oe_highlight" type="object"
+                        attrs="{'invisible': ['|','|','|',('e_invoice_version', '=', '0.9'),('state', '!=', 'posted'),('e_invoice_state', 'not in', ['ready_to_sign','invalid']), ('move_type', 'in', ['entry','out_receipt','in_receipt'])]}"/>
+                <button name="action_send_e_invoice_v9" string="ETA Send" class="oe_highlight" type="object"
+                        attrs="{'invisible': ['|','|','|',('e_invoice_version', '=', '1.0'),('state', '!=', 'posted'),('e_invoice_state', 'not in', ['draft','invalid']), ('move_type', 'in', ['entry','out_receipt','in_receipt'])]}"/>
+                <button name="get_state_e_invoice_document" string="Get ETA Status" class="oe_highlight" type="object"
+                        attrs="{'invisible': ['|','|',('state', '!=', 'posted'),('e_invoice_state', 'in', ['draft','ready_to_sign']), ('move_type', 'in', ['entry','out_receipt','in_receipt'])]}"/>
+                <button name="print_e_invoice_document" string="Print Document" class="oe_highlight" type="object"
+                        attrs="{'invisible': ['|','|',('state', '!=', 'posted'),('e_invoice_state', 'in', ['draft','ready_to_sign','submitted','invalid']), ('move_type', '=', 'entry')]}"/>
+
+            </xpath>
+            <xpath expr="//page[@name='other_info']" position="after">
+                <page string="E-Invoice" name="e_invoice_info"
+                      attrs="{'invisible': [('move_type', 'in', ['entry','out_receipt','in_receipt'])]}">
+                    <group>
+                        <group>
+                            <field name="e_invoice_version"/>
+                            <field name="taxpayer_activity_code_id"
+                                   options="{'no_open': True,'no_create':True}"
+                                   attrs="{'required':[('move_type', 'not in', ['entry','out_receipt','in_receipt'])],'readonly': [('state', '!=', 'draft')]}"/>
+                            <field name="submissionId"/>
+                            <field name="uuid"/>
+                        </group>
+                        <group>
+                            <field name="longId"/>
+                            <field name="hash_key"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="error_rejected"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

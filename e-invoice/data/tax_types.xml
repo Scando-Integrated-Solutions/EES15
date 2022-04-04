@@ -1,0 +1,380 @@
+<odoo>
+    <data noupdate="1">
+        <!-- Tax types -->
+        <record id="eta_tax_type_code_t1" model="eta.tax.type.code">
+            <field name="code">T1</field>
+            <field name="name">Value added tax</field>
+        </record>
+        <record id="eta_tax_type_code_t2" model="eta.tax.type.code">
+            <field name="code">T2</field>
+            <field name="name">Table tax (percentage)</field>
+        </record>
+        <record id="eta_tax_type_code_t3" model="eta.tax.type.code">
+            <field name="code">T3</field>
+            <field name="name">Table tax (Fixed Amount)</field>
+        </record>
+        <record id="eta_tax_type_code_t4" model="eta.tax.type.code">
+            <field name="code">T4</field>
+            <field name="name">Withholding tax (WHT)</field>
+        </record>
+        <record id="eta_tax_type_code_t5" model="eta.tax.type.code">
+            <field name="code">T5</field>
+            <field name="name">Stamping tax (percentage)</field>
+            <field name="taxable_fees" eval="True"/>
+        </record>
+        <record id="eta_tax_type_code_t6" model="eta.tax.type.code">
+            <field name="code">T6</field>
+            <field name="name">Stamping Tax (amount)</field>
+            <field name="taxable_fees" eval="True"/>
+        </record>
+        <record id="eta_tax_type_code_t7" model="eta.tax.type.code">
+            <field name="code">T7</field>
+            <field name="name">Entertainment tax</field>
+            <field name="taxable_fees" eval="True"/>
+        </record>
+        <record id="eta_tax_type_code_t8" model="eta.tax.type.code">
+            <field name="code">T8</field>
+            <field name="name">Resource development fee</field>
+            <field name="taxable_fees" eval="True"/>
+        </record>
+        <record id="eta_tax_type_code_t9" model="eta.tax.type.code">
+            <field name="code">T9</field>
+            <field name="name">Service charges</field>
+            <field name="taxable_fees" eval="True"/>
+        </record>
+        <record id="eta_tax_type_code_t10" model="eta.tax.type.code">
+            <field name="code">T10</field>
+            <field name="name">Municipality Fees</field>
+            <field name="taxable_fees" eval="True"/>
+        </record>
+        <record id="eta_tax_type_code_t11" model="eta.tax.type.code">
+            <field name="code">T11</field>
+            <field name="name">Medical insurance fee</field>
+            <field name="taxable_fees" eval="True"/>
+        </record>
+        <record id="eta_tax_type_code_t12" model="eta.tax.type.code">
+            <field name="code">T12</field>
+            <field name="name">Other fees</field>
+            <field name="taxable_fees" eval="True"/>
+        </record>
+        <record id="eta_tax_type_code_t13" model="eta.tax.type.code">
+            <field name="code">T13</field>
+            <field name="name">Stamping tax (percentage)</field>
+        </record>
+        <record id="eta_tax_type_code_t14" model="eta.tax.type.code">
+            <field name="code">T14</field>
+            <field name="name">Stamping Tax (amount)</field>
+        </record>
+        <record id="eta_tax_type_code_t15" model="eta.tax.type.code">
+            <field name="code">T15</field>
+            <field name="name">Entertainment tax</field>
+        </record>
+        <record id="eta_tax_type_code_t16" model="eta.tax.type.code">
+            <field name="code">T16</field>
+            <field name="name">Resource development fee</field>
+        </record>
+        <record id="eta_tax_type_code_t17" model="eta.tax.type.code">
+            <field name="code">T17</field>
+            <field name="name">Service charges</field>
+        </record>
+        <record id="eta_tax_type_code_t18" model="eta.tax.type.code">
+            <field name="code">T18</field>
+            <field name="name">Municipality Fees</field>
+        </record>
+        <record id="eta_tax_type_code_t19" model="eta.tax.type.code">
+            <field name="code">T19</field>
+            <field name="name">Medical insurance fee</field>
+        </record>
+        <record id="eta_tax_type_code_t20" model="eta.tax.type.code">
+            <field name="code">T20</field>
+            <field name="name">Other fees</field>
+        </record>
+
+        <!-- Tax Subtypes -->
+        <record id="eta_tax_type_code_v001" model="eta.tax.type.code">
+            <field name="code">V001</field>
+            <field name="name">Export</field>
+            <field name="parent_id" ref="e-invoice.eta_tax_type_code_t1"/>
+        </record>
+        <record id="eta_tax_type_code_v002" model="eta.tax.type.code">
+            <field name="code">V002</field>
+            <field name="name">Export to free areas and other areas</field>
+            <field name="parent_id" ref="e-invoice.eta_tax_type_code_t1"/>
+        </record>
+        <record id="eta_tax_type_code_v003" model="eta.tax.type.code">
+            <field name="code">V003</field>
+            <field name="name">Exempted good or service</field>
+            <field name="parent_id" ref="e-invoice.eta_tax_type_code_t1"/>
+        </record>
+        <record id="eta_tax_type_code_v004" model="eta.tax.type.code">
+            <field name="code">V004</field>
+            <field name="name">A non-taxable good or service</field>
+            <field name="parent_id" ref="e-invoice.eta_tax_type_code_t1"/>
+        </record>
+        <record id="eta_tax_type_code_v005" model="eta.tax.type.code">
+            <field name="code">V005</field>
+            <field name="name">Exemptions for diplomats, consulates and embassies.</field>
+            <field name="parent_id" ref="e-invoice.eta_tax_type_code_t1"/>
+        </record>
+        <record id="eta_tax_type_code_v006" model="eta.tax.type.code">
+            <field name="code">V006</field>
+            <field name="name">Defence and National security Exemptions</field>
+            <field name="parent_id" ref="e-invoice.eta_tax_type_code_t1"/>
+        </record>
+        <record id="eta_tax_type_code_v007" model="eta.tax.type.code">
+            <field name="code">V007</field>
+            <field name="name">Agreements exemptions</field>
+            <field name="parent_id" ref="e-invoice.eta_tax_type_code_t1"/>
+        </record>
+        <record id="eta_tax_type_code_v008" model="eta.tax.type.code">
+            <field name="code">V008</field>
+            <field name="name">Special Exemptios and other reasons</field>
+            <field name="parent_id" ref="e-invoice.eta_tax_type_code_t1"/>
+        </record>
+        <record id="eta_tax_type_code_v009" model="eta.tax.type.code">
+            <field name="code">V009</field>
+            <field name="name">General Item sales</field>
+            <field name="parent_id" ref="e-invoice.eta_tax_type_code_t1"/>
+        </record>
+        <record id="eta_tax_type_code_v010" model="eta.tax.type.code">
+            <field name="code">V010</field>
+            <field name="name">Other Rates</field>
+            <field name="parent_id" ref="e-invoice.eta_tax_type_code_t1"/>
+        </record>
+        <record id="eta_tax_type_code_tbl01" model="eta.tax.type.code">
+            <field name="code">Tbl01</field>
+            <field name="name">Table tax (percentage)</field>
+            <field name="parent_id" ref="e-invoice.eta_tax_type_code_t2"/>
+        </record>
+        <record id="eta_tax_type_code_tbl02" model="eta.tax.type.code">
+            <field name="code">Tbl02</field>
+            <field name="name">Table tax (percentage)</field>
+            <field name="parent_id" ref="e-invoice.eta_tax_type_code_t3"/>
+        </record>
+        <record id="eta_tax_type_code_w001" model="eta.tax.type.code">
+            <field name="code">W001</field>
+            <field name="name">Contracting</field>
+            <field name="parent_id" ref="e-invoice.eta_tax_type_code_t4"/>
+        </record>
+        <record id="eta_tax_type_code_w002" model="eta.tax.type.code">
+            <field name="code">W002</field>
+            <field name="name">Supplies</field>
+            <field name="parent_id" ref="e-invoice.eta_tax_type_code_t4"/>
+        </record>
+        <record id="eta_tax_type_code_w003" model="eta.tax.type.code">
+            <field name="code">W003</field>
+            <field name="name">Purachases</field>
+            <field name="parent_id" ref="e-invoice.eta_tax_type_code_t4"/>
+        </record>
+        <record id="eta_tax_type_code_w004" model="eta.tax.type.code">
+            <field name="code">W004</field>
+            <field name="name">Services</field>
+            <field name="parent_id" ref="e-invoice.eta_tax_type_code_t4"/>
+        </record>
+        <record id="eta_tax_type_code_w005" model="eta.tax.type.code">
+            <field name="code">W005</field>
+            <field name="name">Sums paid by the cooperative societies for car transportation to their members</field>
+            <field name="parent_id" ref="e-invoice.eta_tax_type_code_t4"/>
+        </record>
+        <record id="eta_tax_type_code_w006" model="eta.tax.type.code">
+            <field name="code">W006</field>
+            <field name="name">Commission agency &amp; brokerage</field>
+            <field name="parent_id" ref="e-invoice.eta_tax_type_code_t4"/>
+        </record>
+        <record id="eta_tax_type_code_w007" model="eta.tax.type.code">
+            <field name="code">W007</field>
+            <field name="name">Discounts &amp; grants &amp; additional exceptional incentives granted by smoke &amp;
+                cement companies
+            </field>
+            <field name="parent_id" ref="e-invoice.eta_tax_type_code_t4"/>
+        </record>
+        <record id="eta_tax_type_code_w008" model="eta.tax.type.code">
+            <field name="code">W008</field>
+            <field name="name">All discounts &amp; grants &amp; commissions granted by petroleum &amp;
+                telecommunications &amp; other companies
+            </field>
+            <field name="parent_id" ref="e-invoice.eta_tax_type_code_t4"/>
+        </record>
+        <record id="eta_tax_type_code_w009" model="eta.tax.type.code">
+            <field name="code">W009</field>
+            <field name="name">Supporting export subsidies</field>
+            <field name="parent_id" ref="e-invoice.eta_tax_type_code_t4"/>
+        </record>
+        <record id="eta_tax_type_code_w010" model="eta.tax.type.code">
+            <field name="code">W010</field>
+            <field name="name">Professional fees</field>
+            <field name="parent_id" ref="e-invoice.eta_tax_type_code_t4"/>
+        </record>
+        <record id="eta_tax_type_code_w011" model="eta.tax.type.code">
+            <field name="code">W011</field>
+            <field name="name">Commission &amp; brokerage _A_57</field>
+            <field name="parent_id" ref="e-invoice.eta_tax_type_code_t4"/>
+        </record>
+        <record id="eta_tax_type_code_w012" model="eta.tax.type.code">
+            <field name="code">W012</field>
+            <field name="name">Hospitals collecting from doctors</field>
+            <field name="parent_id" ref="e-invoice.eta_tax_type_code_t4"/>
+        </record>
+        <record id="eta_tax_type_code_w013" model="eta.tax.type.code">
+            <field name="code">W013</field>
+            <field name="name">Royalties</field>
+            <field name="parent_id" ref="e-invoice.eta_tax_type_code_t4"/>
+        </record>
+        <record id="eta_tax_type_code_w014" model="eta.tax.type.code">
+            <field name="code">W014</field>
+            <field name="name">Customs clearance</field>
+            <field name="parent_id" ref="e-invoice.eta_tax_type_code_t4"/>
+        </record>
+        <record id="eta_tax_type_code_w015" model="eta.tax.type.code">
+            <field name="code">W015</field>
+            <field name="name">Exemption</field>
+            <field name="parent_id" ref="e-invoice.eta_tax_type_code_t4"/>
+        </record>
+        <record id="eta_tax_type_code_w016" model="eta.tax.type.code">
+            <field name="code">W016</field>
+            <field name="name">Advance payment</field>
+            <field name="parent_id" ref="e-invoice.eta_tax_type_code_t4"/>
+        </record>
+        <record id="eta_tax_type_code_st01" model="eta.tax.type.code">
+            <field name="code">ST01</field>
+            <field name="name">Stamping tax (percentage)</field>
+            <field name="parent_id" ref="e-invoice.eta_tax_type_code_t5"/>
+        </record>
+        <record id="eta_tax_type_code_st02" model="eta.tax.type.code">
+            <field name="code">ST02</field>
+            <field name="name">Stamping Tax (amount)</field>
+            <field name="parent_id" ref="e-invoice.eta_tax_type_code_t6"/>
+        </record>
+        <record id="eta_tax_type_code_ent01" model="eta.tax.type.code">
+            <field name="code">Ent01</field>
+            <field name="name">Entertainment tax (rate)</field>
+            <field name="parent_id" ref="e-invoice.eta_tax_type_code_t7"/>
+        </record>
+        <record id="eta_tax_type_code_ent02" model="eta.tax.type.code">
+            <field name="code">Ent02</field>
+            <field name="name">Entertainment tax (amount)</field>
+            <field name="parent_id" ref="e-invoice.eta_tax_type_code_t7"/>
+        </record>
+        <record id="eta_tax_type_code_rd01" model="eta.tax.type.code">
+            <field name="code">RD01</field>
+            <field name="name">Resource development fee (rate)</field>
+            <field name="parent_id" ref="e-invoice.eta_tax_type_code_t8"/>
+        </record>
+        <record id="eta_tax_type_code_rd02" model="eta.tax.type.code">
+            <field name="code">RD02</field>
+            <field name="name">Resource development fee (amount)</field>
+            <field name="parent_id" ref="e-invoice.eta_tax_type_code_t8"/>
+        </record>
+        <record id="eta_tax_type_code_sc01" model="eta.tax.type.code">
+            <field name="code">SC01</field>
+            <field name="name">Service charges (rate)</field>
+            <field name="parent_id" ref="e-invoice.eta_tax_type_code_t9"/>
+        </record>
+        <record id="eta_tax_type_code_sc02" model="eta.tax.type.code">
+            <field name="code">SC02</field>
+            <field name="name">Service charges (amount)</field>
+            <field name="parent_id" ref="e-invoice.eta_tax_type_code_t9"/>
+        </record>
+        <record id="eta_tax_type_code_mn01" model="eta.tax.type.code">
+            <field name="code">Mn01</field>
+            <field name="name">Municipality Fees (rate)</field>
+            <field name="parent_id" ref="e-invoice.eta_tax_type_code_t10"/>
+        </record>
+        <record id="eta_tax_type_code_mn02" model="eta.tax.type.code">
+            <field name="code">Mn02</field>
+            <field name="name">Municipality Fees (amount)</field>
+            <field name="parent_id" ref="e-invoice.eta_tax_type_code_t10"/>
+        </record>
+        <record id="eta_tax_type_code_mi01" model="eta.tax.type.code">
+            <field name="code">MI01</field>
+            <field name="name">Medical insurance fee (rate)</field>
+            <field name="parent_id" ref="e-invoice.eta_tax_type_code_t11"/>
+        </record>
+        <record id="eta_tax_type_code_mi02" model="eta.tax.type.code">
+            <field name="code">MI02</field>
+            <field name="name">Medical insurance fee (amount)</field>
+            <field name="parent_id" ref="e-invoice.eta_tax_type_code_t11"/>
+        </record>
+        <record id="eta_tax_type_code_of01" model="eta.tax.type.code">
+            <field name="code">OF01</field>
+            <field name="name">Other fees (rate)</field>
+            <field name="parent_id" ref="e-invoice.eta_tax_type_code_t12"/>
+        </record>
+        <record id="eta_tax_type_code_of02" model="eta.tax.type.code">
+            <field name="code">OF02</field>
+            <field name="name">Other fees (amount)</field>
+            <field name="parent_id" ref="e-invoice.eta_tax_type_code_t12"/>
+        </record>
+        <record id="eta_tax_type_code_st03" model="eta.tax.type.code">
+            <field name="code">ST03</field>
+            <field name="name">Stamping tax (percentage)</field>
+            <field name="parent_id" ref="e-invoice.eta_tax_type_code_t13"/>
+        </record>
+        <record id="eta_tax_type_code_st04" model="eta.tax.type.code">
+            <field name="code">ST04</field>
+            <field name="name">Stamping Tax (amount)</field>
+            <field name="parent_id" ref="e-invoice.eta_tax_type_code_t14"/>
+        </record>
+        <record id="eta_tax_type_code_ent03" model="eta.tax.type.code">
+            <field name="code">Ent03</field>
+            <field name="name">Entertainment tax (rate)</field>
+            <field name="parent_id" ref="e-invoice.eta_tax_type_code_t15"/>
+        </record>
+        <record id="eta_tax_type_code_ent04" model="eta.tax.type.code">
+            <field name="code">Ent04</field>
+            <field name="name">Entertainment tax (amount)</field>
+            <field name="parent_id" ref="e-invoice.eta_tax_type_code_t15"/>
+        </record>
+        <record id="eta_tax_type_code_rd03" model="eta.tax.type.code">
+            <field name="code">RD03</field>
+            <field name="name">Resource development fee (rate)</field>
+            <field name="parent_id" ref="e-invoice.eta_tax_type_code_t16"/>
+        </record>
+        <record id="eta_tax_type_code_rd04" model="eta.tax.type.code">
+            <field name="code">RD04</field>
+            <field name="name">Resource development fee (amount)</field>
+            <field name="parent_id" ref="e-invoice.eta_tax_type_code_t16"/>
+        </record>
+        <record id="eta_tax_type_code_sc03" model="eta.tax.type.code">
+            <field name="code">SC03</field>
+            <field name="name">Service charges (rate)</field>
+            <field name="parent_id" ref="e-invoice.eta_tax_type_code_t17"/>
+        </record>
+        <record id="eta_tax_type_code_sc04" model="eta.tax.type.code">
+            <field name="code">SC04</field>
+            <field name="name">Service charges (amount)</field>
+            <field name="parent_id" ref="e-invoice.eta_tax_type_code_t17"/>
+        </record>
+        <record id="eta_tax_type_code_mn03" model="eta.tax.type.code">
+            <field name="code">Mn03</field>
+            <field name="name">Municipality Fees (rate)</field>
+            <field name="parent_id" ref="e-invoice.eta_tax_type_code_t18"/>
+        </record>
+        <record id="eta_tax_type_code_mn04" model="eta.tax.type.code">
+            <field name="code">Mn04</field>
+            <field name="name">Municipality Fees (amount)</field>
+            <field name="parent_id" ref="e-invoice.eta_tax_type_code_t18"/>
+        </record>
+
+        <record id="eta_tax_type_code_mi03" model="eta.tax.type.code">
+            <field name="code">MI03</field>
+            <field name="name">Medical insurance fee (rate)</field>
+            <field name="parent_id" ref="e-invoice.eta_tax_type_code_t19"/>
+        </record>
+        <record id="eta_tax_type_code_mi04" model="eta.tax.type.code">
+            <field name="code">MI04</field>
+            <field name="name">Medical insurance fee (amount)</field>
+            <field name="parent_id" ref="e-invoice.eta_tax_type_code_t19"/>
+        </record>
+        <record id="eta_tax_type_code_of03" model="eta.tax.type.code">
+            <field name="code">OF03</field>
+            <field name="name">Other fees (rate)</field>
+            <field name="parent_id" ref="e-invoice.eta_tax_type_code_t20"/>
+        </record>
+        <record id="eta_tax_type_code_of04" model="eta.tax.type.code">
+            <field name="code">OF04</field>
+            <field name="name">Other fees (amount)</field>
+            <field name="parent_id" ref="e-invoice.eta_tax_type_code_t20"/>
+        </record>
+    </data>
+</odoo>

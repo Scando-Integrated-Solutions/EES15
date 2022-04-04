@@ -1,0 +1,59 @@
+<odoo>
+    <record id="view_eta_tax_type_code_filter" model="ir.ui.view">
+        <field name="name">view.eta.tax.type.code.filter</field>
+        <field name="model">eta.tax.type.code</field>
+        <field name="arch" type="xml">
+            <search string="E-Invoice Tax Type Codes">
+                <field name="code" string="Tax Type code"/>
+                <field name="name"/>
+                <field name="parent_id"/>
+
+                <filter string="Taxable Fees" name="taxable_fees" domain="[('taxable_fees','=', True)]"/>
+
+                <group expand="0" string="Group By">
+                    <filter string="Parent Type" name="parent_id" domain="[]" context="{'group_by': 'parent_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="view_eta_tax_type_code_tree" model="ir.ui.view">
+        <field name="name">view.eta.tax.type.code.tree</field>
+        <field name="model">eta.tax.type.code</field>
+        <field name="arch" type="xml">
+            <tree string="E-Invoice Tax Type Codes">
+                <field name="display_name" string="Tax Type"/>
+                <field name="name" optional="hide"/>
+                <field name="parent_id" optional="hide"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_eta_tax_type_code_form" model="ir.ui.view">
+        <field name="name">view.eta.tax.type.code.form</field>
+        <field name="model">eta.tax.type.code</field>
+        <field name="arch" type="xml">
+            <form string="E-Invoice Tax Type Codes">
+                <sheet>
+                    <div class="oe_title pr-0">
+                        <h1 class="d-flex flex-row justify-content-between">
+                            <field name="code" class="text-truncate" placeholder="Tax Type Code..."/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="parent_id"/>
+                            <field name="taxable_fees"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="action_eta_tax_type_code" model="ir.actions.act_window">
+        <field name="name">Tax Type Codes</field>
+        <field name="res_model">eta.tax.type.code</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

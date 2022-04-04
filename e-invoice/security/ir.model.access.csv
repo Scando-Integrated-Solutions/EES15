@@ -1,0 +1,3 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+access_eta_taxpayer_activity_code_user,eta.taxpayer.activity.code.user,model_eta_taxpayer_activity_code,base.group_user,1,1,1,1
+access_eta_tax_type_code_user,eta.tax.type.code.code.user,model_eta_tax_type_code,base.group_user,1,1,1,1
