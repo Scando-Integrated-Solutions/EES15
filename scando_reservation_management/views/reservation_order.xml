@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Reservation Order Tree View -->
+    <record id="reservation_order_view_tree" model="ir.ui.view">
+        <field name="name">reservation.order.view.tree</field>
+        <field name="model">reservation.order</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom" string="Reservation Order">
+                <field name="name"/>
+                <field name="customer_id"/>
+                <field name="product_id"/>
+                <field name="location_id"/>
+                <field name="pricelist_id"/>
+                <field name="product_uom"/>
+                <field name="reservation_qty"/>
+                <field name="expiration_duration"/>
+                <field name="expiry_date"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Reservation Order Action -->
+    <record id="reservation_order_action" model="ir.actions.act_window">
+        <field name="name">Reservation Order</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">reservation.order</field>
+        <field name="view_mode">tree</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Add a new Reservation Order
+            </p>
+        </field>
+    </record>
+
+    <!-- Reservation Order Menu -->
+    <menuitem id="reservation_order_menu"
+              name="Reservation Orders"
+              parent="sale.sale_menu_root"
+              action="reservation_order_action"
+              sequence="4"/>
+</odoo>
